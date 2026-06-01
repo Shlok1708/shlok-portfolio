@@ -4,7 +4,7 @@ import javaLogo from "./assets/logos/java.svg";
 import reactLogo from "./assets/logos/react.svg";
 import nodeLogo from "./assets/logos/nodejs.svg";
 import mongoLogo from "./assets/logos/mongodb.svg";
-import mysqlLogo from "./assets/logos/mysql.svg";
+import mysqlLogo from "./assets/logos/Mysql.svg";
 import githubLogo from "./assets/logos/github.svg";
 import firebaseLogo from "./assets/logos/firebase.svg";
 import htmlLogo from "./assets/logos/html.svg";
