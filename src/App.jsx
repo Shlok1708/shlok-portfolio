@@ -17,7 +17,7 @@ import cccLogo from "./assets/logos/ccc.svg";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#050816] text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#050816] text-white">
 
       {/* Gradient Background */}
       <div className="absolute top-[-200px] left-[-100px] w-[500px] h-[500px] bg-purple-600/30 blur-[150px] rounded-full"></div>
@@ -25,8 +25,7 @@ function App() {
       <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] bg-blue-600/30 blur-[150px] rounded-full"></div>
 
       {/* Navbar */}
-   <nav className="relative z-50 flex items-center justify-between px-8 md:px-20 py-6">
-
+       <nav className="relative z-50 flex items-center justify-between px-8 md:px-20 py-6">
         <h1 className="text-3xl font-bold tracking-wider">
           SHLOK VYAS
         </h1>
@@ -52,22 +51,18 @@ function App() {
 
       </nav>
 
-     <div className="h-20"></div>
-
-      <section id="home"></section>
 
       {/* Hero Section */}
-    <section
+      <section
        id="home"
-       className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-20 pt-32"
-       >
+        className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between px-8 md:px-20 pt-10"
+          >
       
-
         {/* Left Content */}
         <div className="max-w-2xl">
 
-          <p className="uppercase tracking-[4px] text-purple-400 mb-6">
-            Software Developer & AI Enthusiast
+          <p className="uppercase tracking-[4px] text-purple-400 mb-3">
+            TURNING IDEAS INTO DIGITAL EXPERIENCES
           </p>
 
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -87,7 +82,8 @@ function App() {
 
           <p className="text-gray-400 text-lg mt-8 leading-relaxed max-w-xl">
 
-            Hi, I’m Shlok Vyas — a Computer Science Engineering student passionate about building modern, AI-ready, and user-friendly digital experiences.
+            Hi, I’m Shlok Vyas — a Computer Science Engineering student passionate about building modern, AI-ready, and user-friendly digital experiences. Actively seeking internship opportunities to learn, grow, and contribute as a Software Developer.
+
 
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
@@ -96,15 +92,11 @@ function App() {
              </span>
 
           <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-           Java Developer
-          </span>
-
-          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-            AI Enthusiast
+            Android Developer
           </span>
      
          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-            Android Developer
+              AI Enthusiast
          </span>
 
   <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">
@@ -144,7 +136,7 @@ function App() {
           <img
             src={shlok}
             alt="profile"
-            className="relative w-[300px] md:w-[420px] rounded-[40px] border border-white/10 shadow-2xl object-cover"
+            className="relative w-[300px] md:w-[420px] rounded-[40px] border border-white/10 shadow-2xl object-cover -translate-y-25"
           />
 
         </div>

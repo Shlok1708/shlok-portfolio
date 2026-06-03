@@ -10,3 +10,7 @@ body{
   color:white;
   font-family:sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
