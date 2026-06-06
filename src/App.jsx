@@ -136,7 +136,7 @@ function App() {
           <img
             src={shlok}
             alt="profile"
-            className="relative w-[300px] md:w-[420px] rounded-[40px] border border-white/10 shadow-2xl object-cover -translate-y-25"
+            className="relative w-[300px] md:w-[420px] rounded-[40px] border border-white/10 shadow-2xl object-cover translate-y-16 md:-translate-y-25"
           />
 
         </div>
