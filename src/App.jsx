@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode } from "react-icons/fa";
 import shlok from "./assets/shlok.jpeg";
 import javaLogo from "./assets/logos/java.svg";
@@ -14,8 +15,52 @@ import phpLogo from "./assets/logos/php.svg";
 import pythonLogo from "./assets/logos/python.svg";
 import cLogo from "./assets/logos/c.svg";
 import cccLogo from "./assets/logos/ccc.svg";
+import { supabase } from "./lib/supabase";
 
 function App() {
+    const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    });
+const [loading, setLoading] = useState(false);
+const handleChange = (e) => {
+     setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  setLoading(true);
+
+  const { error } = await supabase
+    .from("messages")
+    .insert([
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+    ]);
+
+  setLoading(false);
+
+  if (error) {
+    console.log(error);
+    alert("Message not sent!");
+  } else {
+    alert("Message sent successfully!");
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
+};
   return (
     <div className="relative min-h-screen bg-[#050816] text-white">
 
@@ -509,6 +554,48 @@ function App() {
     </div>
 
   </div>
+  <div className="mt-12 bg-white/5 border border-white/10 rounded-3xl p-8">
+  <h3 className="text-2xl font-semibold mb-6">
+    Send Me a Message
+  </h3>
+
+  <form onSubmit={handleSubmit} className="space-y-4">
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Your Name"
+      className="w-full p-4 rounded-xl bg-black/30 border border-white/10 outline-none"
+   />
+
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Your Email"
+      className="w-full p-4 rounded-xl bg-black/30 border border-white/10 outline-none"
+    />
+
+    <textarea
+      rows="5"
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      placeholder="Your Message"
+      className="w-full p-4 rounded-xl bg-black/30 border border-white/10 outline-none"
+    />
+
+ <button
+  type="submit"
+  disabled={loading}
+  className="px-8 py-3 bg-purple-600 rounded-xl hover:bg-purple-700 transition disabled:opacity-50"
+>
+  {loading ? "Sending..." : "Send Message"}
+</button>
+  </form>
+</div>
 
 </section>
 <footer className="px-8 md:px-20 py-8 border-t border-white/10 text-center text-gray-400">
